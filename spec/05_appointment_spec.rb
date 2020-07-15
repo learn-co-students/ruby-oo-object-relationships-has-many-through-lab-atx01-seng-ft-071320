@@ -1,4 +1,5 @@
 require "spec_helper"
+require 'pry'
 
 describe "Appointment" do
 
@@ -28,6 +29,7 @@ describe "Appointment" do
       doctor_who = Doctor.new("The Doctor")
       hevydevy = Patient.new("Devin Townsend")
       appointment = doctor_who.new_appointment(hevydevy, "Friday, January 32nd")
+
       expect(appointment.patient).to eq(hevydevy)
     end
   end
