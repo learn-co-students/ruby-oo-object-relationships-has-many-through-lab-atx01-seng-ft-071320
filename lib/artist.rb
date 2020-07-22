@@ -4,15 +4,21 @@ attr_reader :name
 
 def initialize(name)
   @name = name
-self.class.all << self
+@@all << self
+end
+
+def new_song(name, genre)
+Song.new(name, self, genre)
 end
 
 def songs
-Songs.all.select {|songs| songs.all.artist == self}
+Song.all.select {|songs| songs.artist == self}
+
 end
 
 def genres
 songs.map {|genres| genres.genre}
+end
 
 def self.all
 @@all
